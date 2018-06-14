@@ -8,8 +8,8 @@ public class Conexao {
     public static Connection conectar() throws SQLException {
 
         String url = "jdbc:mysql://localhost:3306/ecommerce";
-        String usuario = "root";
-        String senha = "2249";
+        String usuario = System.getenv("DB_USER");
+        String senha = System.getenv("DB_PASSWORD");
 
         return DriverManager.getConnection(url, usuario, senha);
     }
