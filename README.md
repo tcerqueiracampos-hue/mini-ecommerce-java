@@ -5,7 +5,7 @@ Mini projeto desenvolvido em Java para praticar conceitos de Programação Orien
 ## 📚 Conceitos praticados
 
 - Java
-- POO
+- Programação orientada a objetos
 - Classes e objetos
 - Construtores
 - Encapsulamento
