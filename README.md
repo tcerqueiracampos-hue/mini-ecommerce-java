@@ -1,41 +1,47 @@
-# 🛒 Mini E-commerce Java
+# 🛒 Mini E-commerce em Java
 
-Mini projeto desenvolvido em Java para praticar conceitos de Programação Orientada a Objetos e Collections.
+Projeto desenvolvido em **Java** com o objetivo de praticar conceitos de **Programação Orientada a Objetos (POO)**, `Map`, `HashMap`, métodos, estruturas de repetição e menus interativos.
 
-## 📚 Conceitos praticados
+## 📌 Sobre o projeto
+
+Este projeto simula um pequeno sistema de e-commerce, permitindo cadastrar e gerenciar produtos através de um menu interativo.
+
+O projeto também representa minha evolução nos estudos de Java, passando por uma implementação inicial e posteriormente por uma refatoração para melhorar a organização e aplicação dos conceitos de POO.
+
+## ⚙️ Funcionalidades
+
+- ➕ Cadastrar produto
+- 🔎 Buscar produto pelo ID
+- 📋 Listar produtos
+- 💰 Alterar preço
+- 📦 Alterar estoque
+- 🗑️ Remover produto
+- 💵 Calcular valor total do estoque
+- 🚪 Menu interativo
+
+## 🧠 Conceitos praticados
 
 - Java
-- Programação orientada a objetos
+- Programação Orientada a Objetos (POO)
 - Classes e objetos
-- Construtores
 - Encapsulamento
+- Construtores
 - Métodos
-- Map
-- HashMap
-- put()
-- get()
-- remove()
-- containsKey()
-- values()
-- for-each
+- Getters
+- `Map`
+- `HashMap`
+- `for`
+- `do while`
+- `switch case`
+- `if/else`
+- `JOptionPane`
+- Refatoração de código
 
-## 🚀 Funcionalidades
+## 🗂️ Estrutura do projeto
 
-- Cadastro de produtos
-- Busca de produto por ID
-- Listagem de produtos
-- Alteração de preço
-- Alteração de estoque
-- Remoção de produtos
-- Cálculo do valor total do estoque
-
-## 👩‍💻 Status
-
-Projeto desenvolvido durante meus estudos de Java.
-
-### Próximos passos
-
-- Refatorar o código
-- Separar responsabilidades em métodos
-- Melhorar a interface
-- Adicionar novas funcionalidades
+```text
+Mini-Ecommerce/
+│
+├── Ecommerce.java
+├── Produto.java
+└── README.md
