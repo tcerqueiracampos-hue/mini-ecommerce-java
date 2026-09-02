@@ -7,16 +7,14 @@ public class Produto {
     private double preco;
     private int estoque;
 
-}
-
 Produto(int id, String nome, double preco, int estoque){
     this.id = id;
     this.nome = nome;
     this.preco = preco;
     this.estoque = estoque;
-}
+    }
 
-void apresentaproduto(){
+void apresentaProduto(){
     JOptionPane.showMessageDialog(null,
     "ID: " + this.id + "\n" +
     "Nome: " + this.nome + "\n" +
@@ -45,4 +43,6 @@ public double getPreco() {
 
 public int getEstoque() {
     return estoque;
+}
+
 }
