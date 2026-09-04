@@ -42,42 +42,74 @@ public void listarProdutos() {
 }
 
 public void alterarPreco() {
-    double novoPreco = Double.parseDouble(
-        JOptionPane.showInputDialog("Digite o novo preço:")
+    try {
+        double novoPreco = Double.parseDouble(
+            JOptionPane.showInputDialog("Digite o novo preço:")
         );
-        
+
         int id = Integer.parseInt(
-        JOptionPane.showInputDialog("Digite o ID do produto para modificar o preço:")
+            JOptionPane.showInputDialog(
+                "Digite o ID do produto para modificar o preço:"
+            )
         );
-        
+
         if (produtos.containsKey(id)) {
             Produto produto = produtos.get(id);
             produto.modificaPreco(novoPreco);
-            JOptionPane.showMessageDialog(null, 
-            "Preço do produto atualizado com sucesso.");
+
+            JOptionPane.showMessageDialog(
+                null,
+                "Preço do produto atualizado com sucesso."
+            );
         } else {
-            JOptionPane.showMessageDialog(null, "Produto não encontrado.");
+            JOptionPane.showMessageDialog(
+                null,
+                "Produto não encontrado."
+            );
         }
+
+    } catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(
+            null,
+            e.getMessage(),
+            "Erro",
+            JOptionPane.ERROR_MESSAGE
+        );
+
+    } finally {
+        JOptionPane.showMessageDialog(
+            null,
+            "Operação de alteração de preço concluída."
+        );
+    }
 }
 
 public void alterarEstoque() {
-    int id = Integer.parseInt(
-        JOptionPane.showInputDialog(
-            "Digite o ID do produto para modificar o estoque:")
-        );
-        
-        if (produtos.containsKey(id)) {
-             int novoEstoque = Integer.parseInt(
+    try{
+        int novoEstoque = Integer.parseInt(
             JOptionPane.showInputDialog("Digite o novo estoque:")
             );
             
-            Produto produto = produtos.get(id);
-            produto.modificaEstoque(novoEstoque);
-            JOptionPane.showMessageDialog(null, 
-            "Estoque do produto atualizado com sucesso.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Produto não encontrado.");
-        }
+            int id = Integer.parseInt(
+            JOptionPane.showInputDialog("Digite o ID do produto para modificar o estoque:")
+            );
+            
+            if (produtos.containsKey(id)) {
+                Produto produto = produtos.get(id);
+                produto.modificaEstoque(novoEstoque);
+                JOptionPane.showMessageDialog(null, 
+                "Estoque do produto atualizado com sucesso.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado.");
+            }
+    }catch (IllegalArgumentException e) {
+    JOptionPane.showMessageDialog(
+        null,e.getMessage(),"Erro", JOptionPane.ERROR_MESSAGE);
+    
+    } finally {
+        JOptionPane.showMessageDialog(null, 
+        "Operação de alteração de estoque concluída.");
+    }
 }
 
 public void removerProduto() {
