@@ -7,7 +7,7 @@ public class Conexao {
 
     public static Connection conectar() throws SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/mini_ecommerce";
+        String url = "jdbc:mysql://localhost:3306/ecommerce";
         String usuario = "root";
         String senha = "2249";
 

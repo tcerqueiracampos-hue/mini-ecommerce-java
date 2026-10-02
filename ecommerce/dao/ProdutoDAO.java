@@ -1,5 +1,4 @@
 package ecommerce.dao;
-package ecommerce.util;
 
 import ecommerce.model.Produto;
 import ecommerce.util.Conexao;
@@ -22,5 +21,6 @@ public class ProdutoDAO {
         stmt.setInt(4, produto.getEstoque());
 
         int linhas = stmt.executeUpdate();
+        System.out.println("Produto cadastrado! Linhas afetadas: " + linhas);
     }
 }

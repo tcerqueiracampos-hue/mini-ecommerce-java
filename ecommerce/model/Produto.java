@@ -9,7 +9,7 @@ public class Produto {
     private int estoque;
 
     // Construtor da classe Produto
-    Produto(int id, String nome, double preco, int estoque) {
+    public Produto(int id, String nome, double preco, int estoque) {
         this.id = id;
         this.nome = nome;
 
@@ -27,7 +27,7 @@ public class Produto {
     }
 
     // Método para apresentar as informações do produto
-    void apresentaProduto() {
+   public void apresentaProduto() {
         JOptionPane.showMessageDialog(null,
             "ID: " + this.id + "\n" +
             "Nome: " + this.nome + "\n" +
@@ -36,7 +36,7 @@ public class Produto {
     }
 
     // Método para modificar o preço do produto
-    void modificaPreco(double novoPreco) {
+    public void modificaPreco(double novoPreco) {
         if (novoPreco > 0) {
             this.preco = novoPreco;
         } else {
@@ -45,7 +45,7 @@ public class Produto {
     }
 
     // Método para modificar o estoque do produto
-    void modificaEstoque(int novoEstoque) {
+    public void modificaEstoque(int novoEstoque) {
         if (novoEstoque >= 0) {
             this.estoque = novoEstoque;
         } else {
@@ -54,7 +54,7 @@ public class Produto {
     }
 
     // Métodos getters para acessar os atributos do produto
-    public int getID() {
+    public int getId() {
         return id;
     }
 

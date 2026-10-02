@@ -1,9 +1,15 @@
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
+import ecommerce.model.Produto;
+import ecommerce.dao.ProdutoDAO;
+import java.sql.SQLException;
 
 public class Ecommerce {
+   
+   private ProdutoDAO produtoDAO = new ProdutoDAO();
     private Map<Integer, Produto> produtos = new HashMap<>();
+
     public void cadastrarProduto() {
 
     int id = Integer.parseInt(
@@ -18,6 +24,18 @@ public class Ecommerce {
         JOptionPane.showInputDialog("Digite o estoque do produto:")
     );
      Produto produto = new Produto(id, nome, preco, estoque);
+     
+
+try {
+    produtoDAO.cadastrarProduto(produto);
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(
+        null,
+        "Erro ao cadastrar produto no banco: " + e.getMessage()
+    );
+}
+
+produtos.put(id, produto);
      produtos.put(id, produto);
      JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso.");
 }
