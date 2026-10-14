@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 import ecommerce.model.Produto;
 import ecommerce.dao.ProdutoDAO;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Ecommerce {
    
@@ -54,11 +55,43 @@ public void buscarProduto() {
         }
 }
 public void listarProdutos() {
-    for (Produto produto : produtos.values()) {
-            produto.apresentaProduto();
-        }
-}
+    try {
+        List<Produto> produtosBanco = produtoDAO.listarProdutos();
+        
+        System.out.println("Quantidade retornada pelo MySQL: " + 
+        produtosBanco.size());
 
+        if (produtosBanco.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Nenhum produto cadastrado."
+            );
+            return;
+        }
+
+        StringBuilder mensagem = new StringBuilder();
+
+        for (Produto produto : produtosBanco) {
+            mensagem.append("ID: ")
+                    .append(produto.getId())
+                    .append("\nNome: ")
+                    .append(produto.getNome())
+                    .append("\nPreço: R$ ")
+                    .append(produto.getPreco())
+                    .append("\nEstoque: ")
+                    .append(produto.getEstoque())
+                    .append("\n--------------------\n");
+        }
+
+        JOptionPane.showMessageDialog(null, mensagem.toString());
+
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(
+            null,
+            "Erro ao listar produtos: " + e.getMessage()
+        );
+    }
+}
 public void alterarPreco() {
     try {
         double novoPreco = Double.parseDouble(
