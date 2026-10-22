@@ -8,7 +8,7 @@ Este é um mini sistema de e-commerce desenvolvido para simular o gerenciamento 
 
 O projeto foi desenvolvido de forma incremental, permitindo aplicar novos conceitos de Java conforme os estudos avançam.
 
-Atualmente, o projeto está evoluindo para utilizar **MySQL com JDBC**, permitindo substituir gradualmente a persistência em memória por um banco de dados.
+O projeto utiliza **MySQL com JDBC** para persistir e consultar dados de produtos, integrando a aplicação Java a um banco de dados relacional.
 
 ## ⚙️ Funcionalidades
 
@@ -72,4 +72,8 @@ Atualmente, o projeto está evoluindo para utilizar **MySQL com JDBC**, permitin
 
 ## 🚀 Próximos passos
 
-O projeto continuará evoluindo com a implementação das demais operações do CRUD utilizando JDBC e MySQL.
+* Ampliar as validações de dados e o tratamento de erros.
+
+* Desenvolver testes automatizados.
+
+* Melhorar a documentação e a organização do código conforme a evolução do projeto.
