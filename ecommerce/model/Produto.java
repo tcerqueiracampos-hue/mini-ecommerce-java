@@ -16,19 +16,19 @@ public class Produto {
         if (preco > 0) {
             this.preco = preco;
         } else {
-            JOptionPane.showMessageDialog(null, "Preço inválido!");
+            throw new IllegalArgumentException("Preço inválido!");
         }
 
         if (estoque >= 0) {
             this.estoque = estoque;
         } else {
-            JOptionPane.showMessageDialog(null, "Estoque inválido!");
+            throw new IllegalArgumentException("Estoque inválido!");
         }
     }
 
     // Método para apresentar as informações do produto
    public void apresentaProduto() {
-        JOptionPane.showMessageDialog(null,
+       JOptionPane.showMessageDialog(null,
             "ID: " + this.id + "\n" +
             "Nome: " + this.nome + "\n" +
             "Preço: " + this.preco + "\n" +
@@ -40,7 +40,7 @@ public class Produto {
         if (novoPreco > 0) {
             this.preco = novoPreco;
         } else {
-            JOptionPane.showMessageDialog(null, "Preço inválido!");
+            throw new IllegalArgumentException("Preço inválido!");
         }
     }
 
@@ -49,7 +49,7 @@ public class Produto {
         if (novoEstoque >= 0) {
             this.estoque = novoEstoque;
         } else {
-            JOptionPane.showMessageDialog(null, "Estoque inválido!");
+            throw new IllegalArgumentException("Estoque inválido!");
         }
     }
 
